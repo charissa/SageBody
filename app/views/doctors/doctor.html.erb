@@ -1,10 +1,10 @@
 
 	<body>
 		<div id="container">
-			<%= render _header %>
+			<%= render 'layouts/header' %>
 			<div id='middle'>
-			<% :doctor %>
+			<%= render :text => params.inspect %>
 			</div> <!-- middle -->
+			<%= render 'layouts/footer' %>
 		</div> <!-- container -->
 	</body>
-</html>

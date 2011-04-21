@@ -19,6 +19,10 @@ describe 'Application Routing'  do
       it 'recognizes and routes doctors/movement' do
       {:get =>'doctors/movement'}.should route_to :controller => 'doctors', :action => 'doctor', :doctor =>'movement'
     end
+    
+       it 'recognizes and routes doctors/main' do
+        {:get =>'doctors/main'}.should route_to :controller => 'doctors', :action => 'main'
+      end
   
   end
 end

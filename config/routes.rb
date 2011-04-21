@@ -6,7 +6,9 @@ Sagebody::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
   match 'home/index' =>'home#index'
+    match 'doctors/main' => 'doctors#main' # order is important!
   match 'doctors/:doctor' =>'doctors#doctor'
+
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
