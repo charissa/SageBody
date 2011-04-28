@@ -1,0 +1,40 @@
+
+<body>
+	<div id="container">
+	<%= render "/layouts/header" %>
+		<div id="middle">
+			<p> Four doctors. That many? How about a GP to take care of all the basics? After all, if all the basics are taken care of, who needs all the specialists? Well, this is the point; to obviate the presence of doctors in your life. Have them as friends, as tellers of interesting stories, as keepers of a peculiar understanding of the human condition.
+
+			The four are really one: you! Exciting! Kind of frightening too. It means you have to ask yourself all sorts of questions, like "what are my needs regarding sleep-food-space-relationships-sex-work-vacation?" Or, "how did I feel after that workout?" The Four Doctors are there to help get some clue of what really makes us feel good, and what activities, foods, and lifestyle choices rob us of vitality. Ideally, this attention to meeting our needs and recognizing our wants provide an individual with motive, a foundation that maintains a center from which to grow healthier and happier.</p>
+			<table > 
+
+			<tr>
+				<td class="drimage"><%= link_to (image_tag "drquiet.jpeg", :alt => "Dr. Quiet Image"), "/doctors/quiet"%></td>
+				<td class="drimage"><%= link_to (image_tag "drdiet.jpeg", :alt => "Dr. Diet Image"), "/doctors/diet"%></td>
+				<td class="drimage"><%= link_to (image_tag "drmovement.jpeg", :alt => "Dr. Movement Image"), "/doctors/movement"%></td>
+				<td class="drimage"><%= link_to (image_tag "drhappiness.jpeg", :alt => "Dr. Happiness Image"), "/doctors/happiness"%>></td>
+			</tr> 
+			<tr>
+				<td><h2><%= link_to "Dr Quiet", '/doctors/quiet'%></h2></a></td>
+				<td><h2><%= link_to "Dr Diet", '/doctors/diet'%></h2></a></td>
+				<td><h2><%= link_to "Dr Movement", '/doctors/movement'%></h2></a></td>
+				<td><h2><%= link_to "Dr Happiness", '/doctors/happiness'%></h2></a></td>	
+			</tr>
+
+			<tr>
+				<td><p>   Dr. Quiet is the physician in charge of energy management and recovery. When you’re overly stressed and your fight or flight system is triggered repeatedly or for long periods of time, one of the first things to suffer is your sleep. Unfortunately, your body’s ability to recover and repair itself is tied in very real, biological ways to the sleep that you get. Dr. Quiet’s primary duty is to encourage you to get the necessary sleep to recover from the challenges you faced the day before and to wake energized for the day to come. At the same time, Dr. Quiet guides you to get the relaxation and the self-time you need to stay calm, focused and energized during the day. For example, Dr. Quiet can show you how to get active rest during your workday that will help you to tackle your projects more efficiently and effectively than ever. In short, following Dr. Quiet’s specific guidelines and sleep recommendations will take you a long way towards permanent health and wellbeing.</p></td>
+				<td>
+					<p>Dr. Diet provides the foundation for wellbeing. Food and drink dramatically affect our energy levels and our biochemical reality, which in turn influences our emotional and our mental reality. In my 24 years of clinical practice as an International Holistic Health Practitioner, trainer and coach of athletes, I’ve seen over and over again that when the diet is deficient, there just isn’t enough energy or clarity of mind to initiate and sustain the changes needed for self-healing.</p>
+					<p>As you’ll soon see, surprisingly, Dr. Diet won’t necessarily guide everyone to eat the same foods. In fact, the kinds of foods and the proportions of those foods that are right for you may vary quite radically from your friends and loved ones. Dr. Diet gives you the information you need to make the right nutritional choices for your body.</p></td>
+				<td><p>Dr. Movement is my addition to our panel of inner Doctors. Over the course of history, humans have become more and more sedentary. We no longer have to hunt and gather just to feed ourselves. Our jobs and careers require us to sit most of the day in front of computer screens, and the daily demands of our life often keep us from any kind of beneficial physical movement. Daily movement isn’t simply necessary for keeping a trim figure or decreasing the risk of heart disease.  In fact, it’s necessary to get nutrients to and through our body, to move waste out of our bodies and to generate emotional stability and mental clarity. Dr. Movement is there to show you the way to acquire more life-force and how to move it into action so that you can truly experience and enjoy life.    
+				</p></td>
+				<td><p>Dr. Happiness is always there to lead us toward a life that fulfills our individual needs. Dr. Happiness advises us that if we lead a life that doesn’t fit with our core values and doesn’t fulfill us, every facet of our life becomes a burden. So, the less your current lifestyle fits with your core values, the more frequently you will be stressed and worn out. The important guiding truth that this Doctor offers is that happiness is an essential feature of genuine lasting health. Dr. Happiness shows you how to create and undertake the deep introspective study and intention to discover what makes you truly happy.</p></td>	
+			</tr>
+
+			</table>
+		</div><!-- middle -->
+	<%= render "/layouts/footer" %>
+
+
+	</div><!-- container -->
+</body>

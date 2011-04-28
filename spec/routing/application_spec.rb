@@ -21,7 +21,7 @@ describe 'Application Routing'  do
     end
     
        it 'recognizes and routes doctors/main' do
-        {:get =>'doctors/main'}.should route_to :controller => 'doctors', :action => 'main'
+        {:get =>doctors_main_path}.should route_to :controller => 'doctors', :action => 'main'
       end
   
   end

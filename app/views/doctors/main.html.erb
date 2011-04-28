@@ -1,7 +1,7 @@
 
 	<body>
 		<div id="container">
-		<%= render "layouts/header" %>
+		<%= render "/layouts/header" %>
 			<div id="middle">
 				<p> Four doctors. That many? How about a GP to take care of all the basics? After all, if all the basics are taken care of, who needs all the specialists? Well, this is the point; to obviate the presence of doctors in your life. Have them as friends, as tellers of interesting stories, as keepers of a peculiar understanding of the human condition.
 
@@ -9,18 +9,16 @@
 				<table > 
 
 				<tr>
-					link_to "Profile", @profile
-					# => <a href="/profiles/1">Profile</a>
-					<td class="drimage"><%= link_to '', "doctors/quiet"%><%= image_tag "drquiet.jpeg", :alt => "Dr. Quiet Image" %></td>
-					<td class="drimage"><%= link_to '', "doctors/diet"%><%= image_tag "drdiet.jpeg", :alt => "Dr. Diet Image" %></td>
-					<td class="drimage"><%= link_to '', "doctors/movement"%><%= image_tag "drmovement.jpeg", :alt => "Dr. Movement Image" %></td>
-					<td class="drimage"><%= link_to '', "doctors/happiness"%><%= image_tag "drhappiness.jpeg", :alt => "Dr. Happiness Image" %></td>
+					<td class="drimage"><%= link_to (image_tag "drquiet.jpeg", :alt => "Dr. Quiet Image"), "/doctors/quiet"%></td>
+					<td class="drimage"><%= link_to (image_tag "drdiet.jpeg", :alt => "Dr. Diet Image"), "/doctors/diet"%></td>
+					<td class="drimage"><%= link_to (image_tag "drmovement.jpeg", :alt => "Dr. Movement Image"), "/doctors/movement"%></td>
+					<td class="drimage"><%= link_to (image_tag "drhappiness.jpeg", :alt => "Dr. Happiness Image"), "/doctors/happiness"%>></td>
 				</tr> 
 				<tr>
-					<td><h2><a href="prescriptions.php?dr=Quiet&num=2">Dr. Quiet</h2></a></td>
-					<td><h2><a href="prescriptions.php?dr=Diet&num=4">Dr. Diet</h2></a></td>
-					<td><h2><a href="prescriptions.php?dr=Movement&num=8">Dr. Movement</h2></a></td>
-					<td><h2><a href="prescriptions.php?dr=Happiness&num=16">Dr. Happiness</h2></a></td>	
+					<td><h2><%= link_to "Dr Quiet", '/doctors/quiet'%></h2></a></td>
+					<td><h2><%= link_to "Dr Diet", '/doctors/diet'%></h2></a></td>
+					<td><h2><%= link_to "Dr Movement", '/doctors/movement'%></h2></a></td>
+					<td><h2><%= link_to "Dr Happiness", '/doctors/happiness'%></h2></a></td>	
 				</tr>
 
 				<tr>
@@ -31,12 +29,11 @@
 					<td><p>Dr. Movement is my addition to our panel of inner Doctors. Over the course of history, humans have become more and more sedentary. We no longer have to hunt and gather just to feed ourselves. Our jobs and careers require us to sit most of the day in front of computer screens, and the daily demands of our life often keep us from any kind of beneficial physical movement. Daily movement isn’t simply necessary for keeping a trim figure or decreasing the risk of heart disease.  In fact, it’s necessary to get nutrients to and through our body, to move waste out of our bodies and to generate emotional stability and mental clarity. Dr. Movement is there to show you the way to acquire more life-force and how to move it into action so that you can truly experience and enjoy life.    
 					</p></td>
 					<td><p>Dr. Happiness is always there to lead us toward a life that fulfills our individual needs. Dr. Happiness advises us that if we lead a life that doesn’t fit with our core values and doesn’t fulfill us, every facet of our life becomes a burden. So, the less your current lifestyle fits with your core values, the more frequently you will be stressed and worn out. The important guiding truth that this Doctor offers is that happiness is an essential feature of genuine lasting health. Dr. Happiness shows you how to create and undertake the deep introspective study and intention to discover what makes you truly happy.</p></td>	
-	-->		
 				</tr>
 
 				</table>
 			</div><!-- middle -->
-		<%= render "layouts/footer" %>
+		<%= render "/layouts/footer" %>
 
 
 		</div><!-- container -->

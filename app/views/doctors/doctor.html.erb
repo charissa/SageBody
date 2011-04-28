@@ -1,10 +1,100 @@
+<!--
+	<?php
+		$pageTitle = "SageBody:Dr. ". $_REQUEST['dr']." Prescriptions";
+		include_once('util.php');
+		include_once("_html_head.php");
+		$num=$_REQUEST['num'];
+		include_once("dbinfo/db.php");
+		$db=ConnectToDb($dbServer, $dbUser, $dbPass, $dbName);
+		$access=2; //everyone
+		if ($_SESSION['logged_in']==1){
+			switch ($_SESSION['user_type']){
+			   case 'registered':
+			      $access+=4;
+			      break;
+			   case 'client':
+			      $access+=4+8;
+			      break;
+			   case 'admin':
+			      $access+=4+8+16;
+			      break;
+			   default:
+			      $access=2;// this is actually an error.
 
-	<body>
-		<div id="container">
-			<%= render 'layouts/header' %>
-			<div id='middle'>
-			<%= render :text => params.inspect %>
-			</div> <!-- middle -->
+			}	
+		}
+
+		$q="SELECT * FROM {$dbTableContent} WHERE (($num & category) AND ($access & access)) ORDER BY created DESC" ; 
+		$result = mysql_query($q)
+			or die(mysql_error());  
+		$i=0;	
+		$rows=array();
+		while($row = mysql_fetch_array( $result )){	
+			$rows[$i]=$row;
+			$i++;}
+	?>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		//Set default open/close settings
+		$('.annotation').hide(); //Hide/close all containers
+	//	$('.title:first').addClass('active').next().show(); //Add "active" class to first title, then show/open the immediate next container
+
+		//On Click
+		$('.title').click(function(){
+			if( $(this).next().is(':hidden') ) { //If immediate next container is closed...
+				$('.title').removeClass('active').next().slideUp(); //Remove all "active" state and slide up the immediate next container
+				$(this).toggleClass('active').next().slideDown(); //Add "active" state to clicked trigger and slide down the immediate next container
+			}
+			else{
+					$('.title').removeClass('active').next().slideUp();
+			}
+			return false; //Prevent the browser jump to the link anchor
+		});
+
+	});
+	</script>
+-->
+		<body>
+			<div id="container">
+				<%= render '/layouts/header' %>
+				<div id='middle'>
+				<h1 id='dr'>Dr. <%= params[:doctor].capitalize %></h1>
+    			<%	drs=["Quiet","Diet","Movement","Happiness"]
+				nums=[2,4,8,16] %>
+				<p id='consult'>Also consult: ";
+				$i=0; $j=0;
+				foreach ($drs as $dr){
+					$num=$nums[$i];
+					if ($dr!=$_REQUEST['dr']){
+						echo "<a href='prescriptions.php?dr={$dr}&num={$num}'>Dr. {$dr}</a>";
+						if($j!=2) echo ", "; //very ugly ...
+						$j++;
+					}
+					$i++;
+				}
+				?>
+				</p>
+				-->
+				<div class="clear"></div>
+
+
+<!--
+				<?php 	$i=0;
+						foreach ($rows as $row) { $i++;
+						?>
+							<h2 class="title"><a href="#"><?php echo $row['title'];?></a></h2>
+							<div class="annotation">
+							<?php echo html_entity_decode($row['html_post']); ?>
+							</div>
+	<?php
+			   				}
+	?>
+				<div class="clear"></div>
+				<br /><br /><br />
+				-->
+				</div> <!-- middle -->
 			<%= render 'layouts/footer' %>
-		</div> <!-- container -->
-	</body>
+
+			</div> <!-- container -->
+		</body>
+	</html>

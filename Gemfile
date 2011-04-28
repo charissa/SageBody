@@ -9,6 +9,7 @@ gem 'sqlite3'
 
 #gem 'rspec'
 gem "rspec-rails", ">= 2.0.0.beta.17"
+gem 'bcrypt-ruby', require: 'bcrypt'
 
 # Use unicorn as the web server
 # gem 'unicorn'

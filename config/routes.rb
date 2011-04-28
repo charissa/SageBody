@@ -1,4 +1,6 @@
 Sagebody::Application.routes.draw do
+  get "users/new"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -6,9 +8,10 @@ Sagebody::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
   match 'home/index' =>'home#index'
-    match 'doctors/main' => 'doctors#main' # order is important!
+  match 'doctors/main' => 'doctors#main' # order is important!
   match 'doctors/:doctor' =>'doctors#doctor'
-
+ resources :users
+ 
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
