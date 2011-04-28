@@ -20,7 +20,6 @@
 			      break;
 			   default:
 			      $access=2;// this is actually an error.
-
 			}	
 		}
 
@@ -54,6 +53,7 @@
 	});
 	</script>
 -->
+<!--
 		<body>
 			<div id="container">
 				<%= render '/layouts/header' %>
@@ -93,6 +93,14 @@
 				<br /><br /><br />
 				-->
 				</div> <!-- middle -->
+-->
+	<body>
+		<div id="container">
+			<%= render 'layouts/header' %>
+			<div id='middle'>
+				<h1> This is a new header </h1>
+			<%= render :text => params.inspect %>
+			</div> <!-- middle -->
 			<%= render 'layouts/footer' %>
 
 			</div> <!-- container -->
